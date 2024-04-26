@@ -1,0 +1,42 @@
+using System;
+using System.Collections;
+using UnityEngine;
+
+[RequireComponent(typeof(GamePiece))]
+public class MovablePiece : MonoBehaviour
+{
+    private GamePiece _piece;
+    private IEnumerator _moveCoroutine;
+
+    private void Awake()
+    {
+        _piece = GetComponent<GamePiece>();
+    }
+
+    public void Move(int newX, int newY, float time)
+    {
+        if (_moveCoroutine != null)
+        {
+            StopCoroutine(_moveCoroutine);
+        }
+
+        _moveCoroutine = MoveCoroutine(newX, newY, time);
+        StartCoroutine(_moveCoroutine);
+    }
+
+    private IEnumerator MoveCoroutine(int newX, int newY, float time)
+    {
+        _piece.SetPos(newX, newY);
+        
+        var startPos = transform.position;
+        var endPos = _piece.Grid.GetWorldPosition(newX, newY);
+
+        for (float t = 0; t <= 1 * time; t+= Time.deltaTime)
+        {
+            _piece.transform.position = Vector3.Lerp(startPos, endPos, t / time);
+            yield return 0;
+        }
+
+        _piece.transform.position = endPos;
+    }
+}
