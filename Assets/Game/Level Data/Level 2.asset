@@ -1,0 +1,52 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e93a10461f13eb649b322127890fbe30, type: 3}
+  m_Name: Level 2
+  m_EditorClassIdentifier: 
+  _x: 7
+  _y: 5
+  _activeCells:
+    gridSize: {x: 7, y: 5}
+    cellSize: {x: 16, y: 16}
+    cells:
+    - row: 01000101010101
+    - row: 00000001000100
+    - row: 01000101010101
+    - row: 00000001000100
+    - row: 01000101010101
+  _spawnCells:
+    gridSize: {x: 7, y: 5}
+    cellSize: {x: 16, y: 16}
+    cells:
+    - row: 01000101010101
+    - row: 00000000000000
+    - row: 00000000000000
+    - row: 00000000000000
+    - row: 00000000000000
+  _obstaclesCells:
+    gridSize: {x: 7, y: 5}
+    cellSize: {x: 16, y: 16}
+    cells:
+    - row: 00000000000000
+    - row: 00000000000000
+    - row: 00000001000100
+    - row: 00000000000000
+    - row: 00000000000000
+  _portalCells:
+    gridSize: {x: 7, y: 5}
+    cellSize: {x: 64, y: 16}
+    cells:
+    - row: 02000000000000000000000000000000000000000000000000000000
+    - row: 00000000000000000000000000000000000000000000000000000000
+    - row: 03000000000000000000000000000000000000000000000000000000
+    - row: 00000000000000000000000000000000000000000000000000000000
+    - row: 01000000000000000000000000000000000000000000000000000000
